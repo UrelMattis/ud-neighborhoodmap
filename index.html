@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Neighborhood Map</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <script type="text/javascript" src="js/styles.js"></script>
+  <script type="text/javascript" src="js/markers.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js'></script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<header>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#">Jamaica Resorts Map</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+          data-bind="textInput: searchContent, valueUpdate: 'afterkeydown'">
+      </form>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <div class="container" style="margin-top:55px">
+    <div class="container-fluid">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="search-area text-center form-group">
+            </div>
+            <h1><u>Resort List</u></h1>
+            <ul class="nav flex-column" data-bind="foreach: markerLocation">
+              <li class="nav-item">
+                <a class="nav-link active" href="#" data-bind="text: title, click: showMarkerContent"></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-8" id="map"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIJD5TBndg_EcaVdBNU09Qb4UC-oSXz-0&callback=initializeApp"
+    async defer onerror="mapsError()"></script>
+</body>
+
+</html>

@@ -40,7 +40,8 @@ function populateInfoWindow() {
         marker.setAnimation(null);
     });
 }
-
+// Function is used for the search filter.
+// The function will control which locations are viewed on the map.
 function ViewModel() {
     initMap();
     var self = this;
